@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  pathImage = 'assets/pages/images/home/';
+  _altImage = 'cap in capacitación y asesoria';
+
   constructor() { }
 
   ngOnInit() {

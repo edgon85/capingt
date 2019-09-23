@@ -10,9 +10,9 @@
               </div>
               <div class="social">
                   <ul>
-                      <li><a target="_blank" href="https://www.facebook.com/CAP-IN-Capacitaci%C3%B3n-y-Asesor%C3%ADa-Profesional-e-Innovadora-2378216642421046/"><i class="fab fa-facebook-f"></i></a></li>
-                      <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                      <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                      <li><a target="_blank" href="{{ facebookUrl }}"><i class="fab fa-facebook-f"></i></a></li>
+                      <li><a href="{{ twitterUrl }}"><i class="fab fa-twitter"></i></a></li>
+                      <li><a href="{{ instagramUrl }}"><i class="fab fa-instagram"></i></a></li>
                    </ul>
               </div>
           </div>
@@ -22,18 +22,17 @@
               <h4 class="title">Enlaces útiles</h4>
               
               <ul>
-                  <li><a href="services.html"><i class="fa fa-angle-right"></i> Servicios</a></li>
-                  <li><a href="about.html"><i class="fa fa-angle-right"></i>Acerca de</a></li>
-                  <li><a href="contact.html"><i class="fa fa-angle-right"></i>Contacto</a></li>
+                  <li><a [routerLink]="['/servicios']"><i class="fa fa-angle-right"></i> Servicios</a></li>
+                  <li><a [routerLink]="['/acerca-de']"><i class="fa fa-angle-right"></i>Acerca de</a></li>
+                  <li><a [routerLink]="['/contacto']"><i class="fa fa-angle-right"></i>Contacto</a></li>
               </ul>
           </div>
           <div class="col-12 col-md-4 section2 order-1 order-md-3">
                   <h4 class="title">Contáctanos</h4>
                   <ul>
-                      <li><a href="#"><i class="fas fa-mobile-alt"></i>+(502) 42768937</a></li>
-                      <li><a href="#"><i class="fas fa-mobile-alt"></i>+(502) 59483746</a></li>
-                      <li><a href="#"><i class="fas fa-at"></i>contacto@capin.com</a></li>
-                      
+                      <li><a href="#"><i class="fas fa-mobile-alt"></i>+(502) {{phone1}}</a></li>
+                      <li><a href="#"><i class="fas fa-mobile-alt"></i>+(502) {{phone2}}</a></li>
+                      <li><a href="#"><i class="fas fa-at"></i>{{ email1 }}</a></li>
                   </ul>
           </div>
           <!-- <div class="col-3 section4"></div> -->
@@ -42,5 +41,7 @@
 </footer>
 
 <section class="copy-right">
-  <p>© 2019 Todos los derechos reservados. Diseñado por WeDev</p>
+  <p>© {{ year }} Todos los derechos reservados. Diseñado por 
+    <a target="_blank" href="{{ weDevUrl }}">WeDev</a> 
+    </p>
 </section>

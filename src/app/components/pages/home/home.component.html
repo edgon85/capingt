@@ -2,11 +2,13 @@
 <header class="masthead">
   <div class="container">
       <div class="intro-text animated fadeInLeft">
-          <div class="intro-lead-in text-uppercase">El mejor equipo <br />de <span>consultoría</span></div>
-          <div class="intro-heading">CAP In Consulting ofrece una amplia gama de servicios a las empresas antes o
-              durante tiempos financieros difíciles. Lo que nos diferencia de otras empresas en la industria es
-              más de tres décadas de servicio.</div>
-          <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="services.html">Dime más</a>
+          <!-- <div class="intro-lead-in text-uppercase">El mejor equipo <br />de <span>consultoría</span></div> -->
+          <div class="intro-lead-in text-uppercase">Capacitarse e innovar <br />es superación y <span>éxito</span></div>
+          <div class="intro-heading">
+            CAP In Consulting ofrece una amplia gama de servicios a las empresas antes o
+              durante tiempos financieros difíciles. Lo que nos diferencia de otras empresas en la industria son
+              varios años de servicio.</div>
+          <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" [routerLink]="['/servicios']">Dime más</a>
       </div>
   </div>
 </header>
@@ -29,7 +31,7 @@
               </span>
               <h4 class="service-heading">Capacitación</h4>
               <p class="text-muted">Estamos seguros que la capacitación es la respuesta a la necesidad de las empresas o instituciones de contar con un personal altamente productivo y capacitado.</p>
-              <a class="tellme-more" href="services.html">Ver más</a>
+              <a class="tellme-more" [routerLink]="['/servicios']">Ver más</a>
           </div>
           <div class="col-md-4 animated fadeInDown">
               <span class="fa-stack fa-4x">
@@ -42,7 +44,7 @@
               <p class="text-muted">
                   Ofrecemos servicios profesionales para empresas del sector público y privado, así como instituciones educativas.
               </p>
-                  <a class="tellme-more" href="services.html">Ver más</a>
+                  <a class="tellme-more" [routerLink]="['/servicios']">Ver más</a>
           </div>
           <div class="col-md-4 animated fadeInDown">
               <span class="fa-stack fa-4x">
@@ -53,7 +55,7 @@
               <p class="text-muted">
                   Contamos con mas de 10 años de experiencia, apoyando a empresas con la logística completa de sus eventos (diseño, organización y ejecución).
               </p>
-                  <a class="tellme-more" href="services.html">Ver más</a>
+                  <a class="tellme-more" [routerLink]="['/servicios']">Ver más</a>
           </div>
       </div>
   </div>
@@ -66,14 +68,14 @@
   <div class="container-fluid">
       <div class="row content">
           <div class="col-12 col-md-6 image animated fadeInLeft">
-              <img src="assets/pages/images/home/about-home.jpg" alt="">
+              <img src="{{pathImage}}about-home.jpg" alt="{{_altImage}}">
           </div>
           <div class="col-12 col-md-6 content-text animated fadeInRight">
               <h2 class="">Unas palabras sobre nosotros</h2>
               <p class="">Somos una empresa que brinda las herramientas que le permiten ser más competitivo en su entorno, laboral, profesional, académico o personal.</p>
               <p class="">Estamos seguros que la formación es un instrumento imprescindible para lograrlo y con nuestra capacitación, asesoría profesional e innovadora usted logrará alcanzar el tan anhelado éxito.</p>
               
-              <a class="btn btn-primary" href="about.html" >Ver más</a>
+              <a class="btn btn-primary" [routerLink]="['/acerca-de']" >Ver más</a>
           </div>
       </div>
   </div>
