@@ -6,12 +6,18 @@ import { PAGES_ROUTES } from './pages.routes';
 import { PagesComponent } from './pages.component';
 import { AdminComponent } from '../admin/admin/admin.component';
 import { SharedAdminModule } from '../admin/admin.module';
+import { OurServicesComponent } from './our-services/our-services.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
     PagesComponent,
-    AdminComponent
+    AdminComponent,
+    OurServicesComponent,
+    AboutComponent,
+    ContactComponent,
   ],
   imports: [
     SharedModule,
@@ -19,7 +25,10 @@ import { SharedAdminModule } from '../admin/admin.module';
     PAGES_ROUTES
   ],
   exports: [
-    PagesComponent
+    PagesComponent,
+    OurServicesComponent,
+    AboutComponent,
+    ContactComponent,
   ]
 })
 export class PagesModule { }

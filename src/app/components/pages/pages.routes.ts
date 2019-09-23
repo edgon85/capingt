@@ -4,6 +4,9 @@ import { HomeComponent } from './home/home.component';
 import { AdminComponent } from '../admin/admin/admin.component';
 import { DashboardComponent } from '../admin/dashboard/dashboard.component';
 import { LoginGardGuard } from '../../services/gards/login-gard.guard';
+import { OurServicesComponent } from './our-services/our-services.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
 
 
 
@@ -13,7 +16,9 @@ const pagesRoutes: Routes = [
         path: '', component: PagesComponent,
         children: [
             { path: 'inicio', component: HomeComponent },
-           // { path: 'tablas', component: TablasComponent },
+            { path: 'servicios', component: OurServicesComponent },
+            { path: 'acerca-de', component: AboutComponent },
+            { path: 'contacto', component: ContactComponent },
             { path: '', redirectTo: 'inicio', pathMatch: 'full' },
         ]
     },
