@@ -186,11 +186,11 @@ header.masthead .intro-text .intro-heading {
 }
 .services .banner .title {
   text-align: center;
-  color: white;
+  color: white !important;
 }
 .services .banner .title h2 {
-  font-weight: 400;
-  text-transform: uppercase;
+  font-weight: 400 !important;
+  text-transform: uppercase !important;
 }
 .services .banner .title p {
   font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;

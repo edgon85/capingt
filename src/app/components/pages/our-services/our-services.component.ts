@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OurServicesComponent implements OnInit {
 
+
+  titleBaner = 'Nuestros servicios';
+  subTitleBaner = 'Lo que hacemos';
+
   constructor() { }
 
   ngOnInit() {

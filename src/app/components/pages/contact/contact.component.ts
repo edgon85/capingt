@@ -14,6 +14,9 @@ export class ContactComponent implements OnInit {
   twitterUrl = '#';
   instagramUrl = '#';
 
+
+  titleBaner = 'Contacto';
+
   constructor() { }
 
   ngOnInit() {

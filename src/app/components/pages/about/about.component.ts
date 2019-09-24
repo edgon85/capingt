@@ -9,6 +9,8 @@ export class AboutComponent implements OnInit {
 
   imagesPath = 'assets/pages/images/about/';
 
+  titleBaner = 'Sobre nosotros';
+
   constructor() { }
 
   ngOnInit() {

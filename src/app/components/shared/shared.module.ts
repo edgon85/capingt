@@ -5,13 +5,15 @@ import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { WidgetContactUsComponent } from './widget-contact-us/widget-contact-us.component';
+import { WidgetBanerPagesComponent } from './widget-baner-pages/widget-baner-pages.component';
 
 @NgModule({
   declarations: [
     PageNotFoundComponent,
     NavbarComponent,
     FooterComponent,
-    WidgetContactUsComponent
+    WidgetContactUsComponent,
+    WidgetBanerPagesComponent
   ],
   imports: [
    // CommonModule
@@ -21,7 +23,8 @@ import { WidgetContactUsComponent } from './widget-contact-us/widget-contact-us.
     PageNotFoundComponent,
     NavbarComponent,
     FooterComponent,
-    WidgetContactUsComponent
+    WidgetContactUsComponent,
+    WidgetBanerPagesComponent
   ]
 })
 export class SharedModule { }
