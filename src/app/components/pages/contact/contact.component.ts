@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validator, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-contact',
@@ -17,9 +19,40 @@ export class ContactComponent implements OnInit {
 
   titleBaner = 'Contacto';
 
-  constructor() { }
+  data: any = {
+    name: '',
+    email: '',
+    phone: '',
+    message: '',
+    timestamp: ''
+  };
+
+  forma: FormGroup;
+  date: any;
+
+  constructor() {
+
+    this.date = new Date();
+
+    this.forma = new FormGroup({
+      name: new FormControl('', Validators.required),
+      email: new FormControl('', [
+        Validators.required,
+        Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}$')
+      ]),
+      phone: new FormControl('', Validators.required),
+      message: new FormControl('', Validators.required),
+      timestamp: new FormControl('' + this.date)
+    });
+
+  }
 
   ngOnInit() {
+  }
+
+
+  sendMessage() {
+    console.log(this.forma.value);
   }
 
 }
