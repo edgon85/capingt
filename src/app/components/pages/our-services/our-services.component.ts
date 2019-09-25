@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-our-services',
@@ -11,7 +13,9 @@ export class OurServicesComponent implements OnInit {
   titleBaner = 'Nuestros servicios';
   subTitleBaner = 'Lo que hacemos';
 
-  constructor() { }
+
+  videoUrl = 'https://player.vimeo.com/video/362180793';
+  constructor(public sanitizer: DomSanitizer) { }
 
   ngOnInit() {
   }
