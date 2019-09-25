@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-declare function init_plugin();
+declare function init_plugin_navbar();
 
 @Component({
   selector: 'app-navbar',
@@ -12,7 +12,7 @@ export class NavbarComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    init_plugin();
+    init_plugin_navbar();
   }
 
 }

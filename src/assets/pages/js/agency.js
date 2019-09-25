@@ -1,4 +1,4 @@
-function init_plugin() {
+function init_plugin_navbar() {
   (function($) {
     "use strict"; // Start of use strict
 
