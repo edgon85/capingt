@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validator, Validators } from '@angular/forms';
+import { Message } from '../../../interfaces/contact-mesaage';
+import { ContactService } from '../../../services/pages/contact.service';
 
 
 @Component({
@@ -19,7 +21,7 @@ export class ContactComponent implements OnInit {
 
   titleBaner = 'Contacto';
 
-  data: any = {
+  data: Message = {
     name: '',
     email: '',
     phone: '',
@@ -30,7 +32,7 @@ export class ContactComponent implements OnInit {
   forma: FormGroup;
   date: any;
 
-  constructor() {
+  constructor(private _contactService: ContactService) {
 
     this.date = new Date();
 
@@ -53,6 +55,25 @@ export class ContactComponent implements OnInit {
 
   sendMessage() {
     console.log(this.forma.value);
+
+    this._contactService.newMessageContact(this.forma.value)
+      .then(
+        (resp) => {
+          console.log('Mensaje enviado satisfactoriamente');
+          this.forma.reset({
+            Message: {
+              name: '',
+              email: '',
+              phone: '',
+              message: '',
+              timestamp: ''
+            }
+          });
+        }
+      )
+      .catch(
+        (e) => console.log('ocurrio un error', e)
+      );
   }
 
 }

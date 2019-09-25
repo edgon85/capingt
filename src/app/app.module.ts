@@ -9,6 +9,12 @@ import { APP_ROUTING } from './app.routes';
 import { PagesModule } from './components/pages/pages.module';
 import { LoginComponent } from './components/accounts/login/login.component';
 
+// Angularfire
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore';
+
+import { environment } from '../environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +25,8 @@ import { LoginComponent } from './components/accounts/login/login.component';
     BrowserModule,
     PagesModule,
     FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
