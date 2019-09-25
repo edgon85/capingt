@@ -25,9 +25,17 @@ export class LoginComponent implements OnInit {
     this.email = data.value.email;
     this.password = data.value.password;
 
-    if ( this.email === 'admin' && this.password === '123456') {
-      this.router.navigate(['/admin']);
-    }
+    this._loginAdminService
+      .loginWithEmail(this.email, this.password)
+      .then(resp => {
+        this.router.navigate(['/admin']);
+      })
+      .catch(error => {
+        console.log('Ocurrio un error!!', error.message);
+      });
+    // if ( this.email === 'admin' && this.password === '123456') {
+    //   this.router.navigate(['/admin']);
+    // }
   }
 
 }
