@@ -54,7 +54,7 @@
         <!-- ============================================================== -->
         <!-- Messages -->
         <!-- ============================================================== -->
-        <li class="nav-item dropdown">
+        <!-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" id="2" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-email"></i>
             <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
@@ -66,7 +66,7 @@
               </li>
               <li>
                 <div class="message-center">
-                  <!-- Message -->
+                  <!- - Message - ->
                   <a href="#">
                     <div class="user-img"> <img src="assets/admin/images/users/1.jpg" alt="user" class="img-circle"> <span
                         class="profile-status online pull-right"></span> </div>
@@ -75,7 +75,7 @@
                         AM</span>
                     </div>
                   </a>
-                  <!-- Message -->
+                  <!- - Message - ->
                   <a href="#">
                     <div class="user-img"> <img src="assets/admin/images/users/2.jpg" alt="user" class="img-circle"> <span
                         class="profile-status busy pull-right"></span> </div>
@@ -84,7 +84,7 @@
                         class="time">9:10 AM</span>
                     </div>
                   </a>
-                  <!-- Message -->
+                  <!- - Message - ->
                   <a href="#">
                     <div class="user-img"> <img src="assets/admin/images/users/3.jpg" alt="user" class="img-circle"> <span
                         class="profile-status away pull-right"></span> </div>
@@ -93,7 +93,7 @@
                         AM</span>
                     </div>
                   </a>
-                  <!-- Message -->
+                  <!- - Message - ->
                   <a href="#">
                     <div class="user-img"> <img src="assets/admin/images/users/4.jpg" alt="user" class="img-circle"> <span
                         class="profile-status offline pull-right"></span> </div>
@@ -110,7 +110,7 @@
               </li>
             </ul>
           </div>
-        </li>
+        </li> -->
         <!-- ============================================================== -->
         <!-- End Messages -->
         <!-- ============================================================== -->
@@ -119,30 +119,32 @@
         <!-- ============================================================== -->
         <!-- Profile -->
         <!-- ============================================================== -->
-        <li class="nav-item dropdown">
+        <li *ngIf="data" class="nav-item dropdown">
           <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false"><img src="assets/admin/images/users/1.jpg" alt="user"
+            aria-haspopup="true" aria-expanded="false">
+            <img [src]=" data.avatar || 'assets/admin/images/no-img.jpg'" alt="cap in"
               class="profile-pic" /></a>
-          <div class="dropdown-menu dropdown-menu-right animated fadeIn">
+          <div  class="dropdown-menu dropdown-menu-right animated fadeIn">
             <ul class="dropdown-user">
-              <li>
+              <li >
                 <div class="dw-user-box">
-                  <div class="u-img"><img src="assets/admin/images/users/1.jpg" alt="user"></div>
+                  <div class="u-img"><img [src]=" data.avatar || 'assets/admin/images/no-img.jpg'" alt="cap in"></div>
                   <div class="u-text">
-                    <h4>Steave Jobs</h4>
-                    <p class="text-muted">varun@gmail.com</p><a href="pages-profile.html"
-                      class="btn btn-rounded btn-danger btn-sm">View Profile</a>
+                    <h4>{{ data.name }}</h4>
+                    <p class="text-muted">{{ data.email }}</p><a 
+                      href="pages-profile.html"
+                      class="btn btn-rounded btn-danger btn-sm">Ver Perfil</a>
                   </div>
                 </div>
               </li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#"><i class="ti-user"></i> My Profile</a></li>
-              <li><a href="#"><i class="ti-wallet"></i> My Balance</a></li>
+              <!-- <li role="separator" class="divider"></li> -->
+              <!-- <li><a href="#"><i class="ti-user"></i> Mi Perfil</a></li> -->
+              <!-- <li><a href="#"><i class="ti-wallet"></i> My Balance</a></li>
               <li><a href="#"><i class="ti-email"></i> Inbox</a></li>
               <li role="separator" class="divider"></li>
-              <li><a href="#"><i class="ti-settings"></i> Account Setting</a></li>
+              <li><a href="#"><i class="ti-settings"></i> Account Setting</a></li> -->
               <li role="separator" class="divider"></li>
-              <li><a href="#"><i class="fa fa-power-off"></i> Logout</a></li>
+              <li><a class="logout" (click)="serrarSesion()"><i class="fa fa-power-off"></i> Cerrar Sesión</a></li>
             </ul>
           </div>
         </li>

@@ -5,7 +5,7 @@
   <div class="preloader">
     <div class="loader">
       <div class="loader__figure"></div>
-      <p class="loader__label">WeDev</p>
+      <p class="loader__label">Cap In</p>
     </div>
   </div>
 
@@ -13,8 +13,8 @@
   <!-- Main wrapper - style you can find in pages.scss -->
   <!-- ============================================================== -->
   <div id="main-wrapper">
-    <app-header-admin></app-header-admin>
-    <app-sidebar-admin></app-sidebar-admin>
+    <app-header-admin [data]= user ></app-header-admin>
+    <app-sidebar-admin [data]= user></app-sidebar-admin>
     <!-- ============================================================== -->
     <!-- Page wrapper  -->
     <!-- ============================================================== -->

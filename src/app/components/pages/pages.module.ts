@@ -10,6 +10,7 @@ import { OurServicesComponent } from './our-services/our-services.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     ContactComponent,
   ],
   imports: [
+    CommonModule,
+    BrowserModule,
     SharedModule,
     SharedAdminModule,
     PAGES_ROUTES,

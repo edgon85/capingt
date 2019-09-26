@@ -11,8 +11,8 @@ export class ContactService {
   constructor(private afs: AngularFirestore) { }
 
 
-  newMessageContact( message: Message ) {
-    return this.afs.collection('messages_capin').add(message);
+  newMessageContact( message: Message,  messageName: any ) {
+    return this.afs.collection('capin/messages/' + messageName).add(message);
   }
 
 }

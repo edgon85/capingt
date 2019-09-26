@@ -4,23 +4,27 @@ import { HeaderAdminComponent } from './shared/header-admin/header-admin.compone
 import { SidebarAdminComponent } from './shared/sidebar-admin/sidebar-admin.component';
 import { BreadcrumbAdminComponent } from './shared/breadcrumb-admin/breadcrumb-admin.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { MessagesComponent } from './pages/messages/messages.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
     HeaderAdminComponent,
     SidebarAdminComponent,
     BreadcrumbAdminComponent,
-    DashboardComponent
+    DashboardComponent,
+    MessagesComponent
   ],
   imports: [
-    // CommonModule
-    RouterModule
+    RouterModule,
+    CommonModule
   ],
   exports: [
     HeaderAdminComponent,
     SidebarAdminComponent,
     BreadcrumbAdminComponent,
-    DashboardComponent
+    DashboardComponent,
+    MessagesComponent
   ]
 })
 export class SharedAdminModule {}
