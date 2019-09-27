@@ -26,7 +26,6 @@ export class AdminComponent implements OnInit {
     this._authService.getStatusAuth().subscribe(
       (status) => {
 
-        console.log(status.uid);
         if ( status ) {
           this._authService.getUserById(status.uid)
           .subscribe(

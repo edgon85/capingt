@@ -6,6 +6,7 @@ import { BreadcrumbAdminComponent } from './shared/breadcrumb-admin/breadcrumb-a
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MessagesComponent } from './pages/messages/messages.component';
 import { CommonModule } from '@angular/common';
+import { ModalMessageComponent } from './shared/modal-message/modal-message.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { CommonModule } from '@angular/common';
     SidebarAdminComponent,
     BreadcrumbAdminComponent,
     DashboardComponent,
-    MessagesComponent
+    MessagesComponent,
+    ModalMessageComponent
   ],
   imports: [
     RouterModule,
@@ -24,7 +26,8 @@ import { CommonModule } from '@angular/common';
     SidebarAdminComponent,
     BreadcrumbAdminComponent,
     DashboardComponent,
-    MessagesComponent
+    MessagesComponent,
+    ModalMessageComponent
   ]
 })
 export class SharedAdminModule {}

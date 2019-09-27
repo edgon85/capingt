@@ -55,9 +55,8 @@ export class ContactComponent implements OnInit {
 
   sendMessage() {
    // console.log(this.forma.value);
-    this.date = Date.now();
 
-    this._contactService.newMessageContact(this.forma.value, this.date)
+    this._contactService.newMessageContact(this.forma.value)
       .then(
         (resp) => {
           console.log('Mensaje enviado satisfactoriamente');

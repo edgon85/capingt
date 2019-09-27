@@ -1,3 +1,30 @@
-<p>
-  messages works!
-</p>
+<div class="col-12 col-lg-10">
+    <div class="card">
+        <div class="card-body">
+            <!-- <h4 class="card-title">Mensajes</h4> -->
+            <h5 *ngIf="noMensajes">No tiene ningún mensaje</h5>
+            <div *ngIf="!noMensajes" class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nombre</th>
+                            <th>Correo</th>
+                            <th>Fecha</th>
+                            <th>Accion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let mensaje of messages; let i = index">
+                            <td>{{ i + 1 }}</td>
+                            <td class="clickleable" (click)="abrirModal(mensaje.data)">{{mensaje.data.name}}</td>
+                            <td>{{mensaje.data.email}}</td>
+                            <td>{{mensaje.data.timestamp | date: 'dd-MM-yyyy'}}</td>
+                            <td><span class="label label-danger clickleable" (click)="deleteMessage(mensaje.id)">Eliminar</span> </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

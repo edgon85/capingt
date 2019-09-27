@@ -1,0 +1,7 @@
+.clickleable{
+    cursor: pointer;
+}
+
+.clickleable:hover{
+    color: blueviolet;
+}

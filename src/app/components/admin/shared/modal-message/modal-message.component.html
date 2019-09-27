@@ -1,0 +1,24 @@
+<div class="fondoNegro animated fadeIn" [ngClass]="_modalService.oculto">
+  <div class="modal fade show" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    style="display: block; padding-right: 15px;">
+    <div class="modal-dialog">
+      <div *ngIf="_modalService.data" class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="myModalLabel">Mensaje de {{_modalService.data.name}}</h4>
+          <button type="button" class="close" (click)="_modalService.ocultarModal()" aria-hidden="true">×</button>
+        </div>
+        <div class="modal-body">
+          <h4>Correo: {{ _modalService.data.email }}</h4>
+          <h5>Teléfono: {{ _modalService.data.phone }}</h5>
+          <h6>fecha: {{ _modalService.data.timestamp | date: 'dd-MM-yyyy' }}</h6>
+          <p>{{ _modalService.data.message }}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-info waves-effect" (click)="_modalService.ocultarModal()" >Close</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+</div>
