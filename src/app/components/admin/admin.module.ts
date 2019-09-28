@@ -7,6 +7,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MessagesComponent } from './pages/messages/messages.component';
 import { CommonModule } from '@angular/common';
 import { ModalMessageComponent } from './shared/modal-message/modal-message.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ModalMessageComponent } from './shared/modal-message/modal-message.comp
     BreadcrumbAdminComponent,
     DashboardComponent,
     MessagesComponent,
-    ModalMessageComponent
+    ModalMessageComponent,
+    ProfileComponent
   ],
   imports: [
     RouterModule,
@@ -27,7 +29,8 @@ import { ModalMessageComponent } from './shared/modal-message/modal-message.comp
     BreadcrumbAdminComponent,
     DashboardComponent,
     MessagesComponent,
-    ModalMessageComponent
+    ModalMessageComponent,
+    ProfileComponent
   ]
 })
 export class SharedAdminModule {}

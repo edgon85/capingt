@@ -8,6 +8,7 @@ import { OurServicesComponent } from './our-services/our-services.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { MessagesComponent } from '../admin/pages/messages/messages.component';
+import { ProfileComponent } from '../admin/pages/profile/profile.component';
 
 
 
@@ -29,6 +30,7 @@ const pagesRoutes: Routes = [
          children : [
              { path: 'dashboard', component: DashboardComponent},
              { path: 'mensajes', component: MessagesComponent},
+             { path: 'perfil', component: ProfileComponent},
              { path: '', redirectTo: '/admin/dashboard', pathMatch: 'full'}
          ]
     }
