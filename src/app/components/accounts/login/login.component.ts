@@ -11,17 +11,21 @@ declare function init_plugin_login();
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
   email: string = null;
   password: string = null;
 
-  constructor( private _loginAdminService: LoginAdminService, private router: Router) { }
+  constructor(
+    private _loginAdminService: LoginAdminService,
+    private router: Router
+  ) {
+    this.checkLogin();
+  }
 
   ngOnInit() {
     init_plugin_login();
   }
 
-  ingresar( data: NgForm ) {
+  ingresar(data: NgForm) {
     this.email = data.value.email;
     this.password = data.value.password;
 
@@ -38,4 +42,24 @@ export class LoginComponent implements OnInit {
     // }
   }
 
+  // reset Password
+  resetPassword(data: any) {
+    this._loginAdminService
+      .resetPassword(data.email)
+      .then(() => {});
+
+    this.router.navigate(['/reset-contraseña']);
+  }
+
+
+  checkLogin() {
+    this._loginAdminService.getStatusAuth().subscribe(
+      (resp) => {
+        console.log(resp);
+        if (resp !== null) {
+          this.router.navigate(['/admin']);
+        }
+      }
+    );
+  }
 }

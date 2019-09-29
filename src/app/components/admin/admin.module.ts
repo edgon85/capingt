@@ -8,6 +8,7 @@ import { MessagesComponent } from './pages/messages/messages.component';
 import { CommonModule } from '@angular/common';
 import { ModalMessageComponent } from './shared/modal-message/modal-message.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
   ],
   imports: [
     RouterModule,
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports: [
     HeaderAdminComponent,

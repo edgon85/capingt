@@ -13,13 +13,16 @@ import { LoginComponent } from './components/accounts/login/login.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 
 import { environment } from '../environments/environment';
+import { ResetPasswordComponent } from './components/accounts/login/reset-password.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
+    ResetPasswordComponent,
   ],
   imports: [
     APP_ROUTING,
@@ -29,6 +32,7 @@ import { environment } from '../environments/environment';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
+    AngularFireStorageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

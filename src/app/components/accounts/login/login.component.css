@@ -38,3 +38,12 @@ Login register and recover password Page
   position: absolute;
   height: 100%;
 }
+
+
+.title{
+  line-height: 30px;
+  font-size: 21px;
+  color: #455a64;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
