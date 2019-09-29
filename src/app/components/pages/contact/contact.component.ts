@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validator, Validators } from '@angular/forms';
 import { Message } from '../../../interfaces/contact-mesaage';
 import { ContactService } from '../../../services/pages/contact.service';
+import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -30,11 +32,14 @@ export class ContactComponent implements OnInit {
   };
 
   forma: FormGroup;
-  date: any;
+  date: any = new Date();
 
-  constructor(private _contactService: ContactService) {
+  constructor(
+    private _contactService: ContactService,
+    private router: Router
+    ) {
 
-    this.date = new Date();
+    // this.date = new Date();
 
     this.forma = new FormGroup({
       name: new FormControl('', Validators.required),
@@ -59,7 +64,14 @@ export class ContactComponent implements OnInit {
     this._contactService.newMessageContact(this.forma.value)
       .then(
         (resp) => {
-          console.log('Mensaje enviado satisfactoriamente');
+          // console.log('Mensaje enviado satisfactoriamente');
+          Swal.fire({
+            position: 'top-end',
+            type: 'success',
+            title: 'Su mensaje a sido enviado, pronto nos comunicaremos con usted',
+            showConfirmButton: false,
+            timer: 2500
+          });
           this.forma.reset({
             Message: {
               name: '',
@@ -72,7 +84,16 @@ export class ContactComponent implements OnInit {
         }
       )
       .catch(
-        (e) => console.log('ocurrio un error', e)
+        (e) => {
+          Swal.fire({
+            type: 'error',
+            title: 'Uups...',
+            text: 'Algo salió mal!',
+            // footer: '<a href>Why do I have this issue?</a>'
+          }).then(
+            (resul) => this.router.navigate(['/.inicio'])
+          );
+        }
       );
   }
 

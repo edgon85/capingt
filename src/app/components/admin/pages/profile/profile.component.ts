@@ -3,6 +3,8 @@ import { User } from 'src/app/interfaces/user';
 import { LoginAdminService } from '../../../../services/account/login-admin.service';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { finalize } from 'rxjs/operators';
+import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -21,7 +23,8 @@ export class ProfileComponent implements OnInit {
 
   constructor(
     private _userService: LoginAdminService,
-    private storage: AngularFireStorage) {
+    private storage: AngularFireStorage,
+    private router: Router) {
     this.getUserById();
   }
 
@@ -40,8 +43,6 @@ export class ProfileComponent implements OnInit {
             // console.log(data.payload.data());
             this.usuario = data.payload.data();
             // console.log(this.usuario);
-
-
           }
         );
       }
@@ -54,10 +55,26 @@ export class ProfileComponent implements OnInit {
     // console.log(this.uid);
     this._userService.updateUser(this.uid, usuario)
       .then(
-      (resp) => console.log('actualizado con exito!')
+      (resp) => {
+        Swal.fire({
+          position: 'center',
+          type: 'success',
+          title: 'Sus datos fueron actualizados!',
+          showConfirmButton: false,
+          timer: 2500
+        });
+      }
       )
       .catch(
-        (e) => console.log('Ocurrio un error ' + e)
+        (e) => {
+          // console.log('Ocurrio un error ' + e);
+          Swal.fire({
+            type: 'error',
+            title: 'Uups...',
+            text: 'Algo salió mal!',
+            // footer: '<a href>Why do I have this issue?</a>'
+          });
+        }
       );
   }
 
@@ -70,7 +87,12 @@ export class ProfileComponent implements OnInit {
 
     if ( archivo.type.indexOf('image') < 0 ) {
      // swal('Sólo imágenes', 'El archivo seleccionando no es una imagen', 'error');
-     console.log('El archivo seleccionando no es una imagen');
+      Swal.fire({
+        type: 'error',
+        title: 'Uups...',
+        text: 'El archivo seleccionando no es una imagen!',
+        footer: '<h5>Su imagen tiene que ser extensión .jpg o .png<h5>'
+      });
       this.imagenSubir = null;
       return;
     }
@@ -105,10 +127,26 @@ export class ProfileComponent implements OnInit {
           (data) => {
             this._userService.updateUser(this.uid, {'avatar': data})
             .then(
-            (resp) => console.log('actualizado con exito!')
+            (resp) => {
+              Swal.fire({
+                position: 'center',
+                type: 'success',
+                title: 'Su imagen fue actualizado!',
+                showConfirmButton: false,
+                timer: 2500
+              });
+            }
             )
             .catch(
-              (e) => console.log('Ocurrio un error ' + e)
+              (e) => {
+                // console.log('Ocurrio un error ' + e);
+                Swal.fire({
+                  type: 'error',
+                  title: 'Uups...',
+                  text: 'Algo salió mal!',
+                  // footer: '<a href>Why do I have this issue?</a>'
+                });
+              }
             );
           }
         );
@@ -117,9 +155,38 @@ export class ProfileComponent implements OnInit {
 
   // reset Password
   resetPassword() {
-  // this._userService.resetPassword(this.usuario.email)
-  this._userService.resetPassword(this.usuario.email)
-    .then(() => this.passReset = true);
+
+    Swal.fire({
+      title: 'Estás seguro?',
+      text: 'Se le enviara un correo electrónico para cambiar la contraseña',
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si, enviar correo!',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.value) {
+
+        this._userService.resetPassword(this.usuario.email)
+          .then(() => this.passReset = true);
+
+        Swal.fire(
+          'Enviado!',
+          'Revise su correo ' + this.usuario.email,
+          'success'
+        ).then(
+          (_) => {
+            this._userService.logout()
+              .then(
+                (resp) => this.router.navigate(['/login'])
+              );
+          }
+        );
+
+      }
+    });
+
   }
 
 }

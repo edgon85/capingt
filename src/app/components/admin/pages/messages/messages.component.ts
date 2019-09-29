@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MessagesService } from '../../../../services/admin/messages.service';
 import { ModalService } from '../../../../services/admin/modal.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-messages',
@@ -41,15 +42,49 @@ export class MessagesComponent implements OnInit {
 
   deleteMessage(documentId: any) {
     // console.log('-> ' + documentId);
+
+    Swal.fire({
+      title: 'Estás seguro?',
+      text: 'No podra revertir esto!',
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si, Eliminar!',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.value) {
+        this.funcionEliminar(documentId);
+        Swal.fire(
+          'Eliminado!',
+          'El mensaje ha sido eliminado.',
+          'success'
+        );
+      }
+    });
+
+
+    // this._messageService.deleteMessage(documentId)
+    //   .then(
+    //     (resp) => {
+    //       console.log('eliminado Satisfactoriamente');
+    //     }
+    //   )
+    //   .catch(
+    //     (e) => console.log('Ocurrio un error' + e)
+    //   );
+  }
+
+  funcionEliminar(documentId: any) {
     this._messageService.deleteMessage(documentId)
-      .then(
-        (resp) => {
-          console.log('eliminado Satisfactoriamente');
-        }
-      )
-      .catch(
-        (e) => console.log('Ocurrio un error' + e)
-      );
+          .then(
+            (resp) => {
+              console.log('eliminado Satisfactoriamente');
+            }
+          )
+          .catch(
+            (e) => console.log('Ocurrio un error' + e)
+          );
   }
 
 
