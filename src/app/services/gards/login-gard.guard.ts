@@ -16,11 +16,11 @@ export class LoginGardGuard implements CanActivate {
     return this._loginService.getStatusAuth().pipe(
       map(status => {
         if (status) {
-          console.log('Paso por el guard');
+         // console.log('Paso por el guard');
           return true;
         } else {
           this.router.navigate(['/login']);
-          console.log('bloqueado por el guard');
+        //  console.log('bloqueado por el guard');
           return false;
         }
       })

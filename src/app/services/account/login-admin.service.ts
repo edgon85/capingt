@@ -52,7 +52,7 @@ export class LoginAdminService {
     const auth = firebase.auth();
 
     return auth.sendPasswordResetEmail(email)
-      .then(() => console.log('email enviado'))
-      .catch((error) => console.log(error));
+      .then(() => {})
+      .catch((error) => {});
   }
 }

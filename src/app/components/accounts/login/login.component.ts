@@ -70,7 +70,7 @@ export class LoginComponent implements OnInit {
   checkLogin() {
     this._loginAdminService.getStatusAuth().subscribe(
       (resp) => {
-        console.log(resp);
+       // console.log(resp);
         if (resp !== null) {
           this.router.navigate(['/admin']);
         }
