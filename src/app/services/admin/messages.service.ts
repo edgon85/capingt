@@ -13,8 +13,13 @@ export class MessagesService {
     return this.firestore.collection('/capin/messages/mensajes').snapshotChanges();
   }
 
-  // Eliminar un gato
+  // Eliminar mensaje
   public deleteMessage(documentId: string) {
     return this.firestore.collection('/capin/messages/mensajes').doc(documentId).delete();
+  }
+
+  // Eliminar evento
+  public getEvento() {
+    return this.firestore.collection('/capin').doc('eventos').snapshotChanges();
   }
 }

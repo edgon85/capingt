@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MessagesService } from '../../../services/admin/messages.service';
 
 @Component({
   selector: 'app-home',
@@ -10,9 +11,18 @@ export class HomeComponent implements OnInit {
   pathImage = 'assets/pages/images/home/';
   _altImage = 'cap in capacitación y asesoria';
 
-  constructor() { }
+  promoDate = false;
+
+  constructor( private _settingsService: MessagesService) {}
 
   ngOnInit() {
+    this._settingsService.getEvento().subscribe(
+      (resp: any) => {
+        // tslint:disable-next-line:prefer-const
+        let datos = resp.payload.data();
+        this.promoDate = datos.evento;
+      }
+    );
   }
 
 }
