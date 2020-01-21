@@ -19,11 +19,7 @@ import { environment } from '../environments/environment';
 import { ResetPasswordComponent } from './components/accounts/login/reset-password.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    ResetPasswordComponent,
-  ],
+  declarations: [AppComponent, LoginComponent, ResetPasswordComponent],
   imports: [
     APP_ROUTING,
     BrowserModule,
@@ -37,4 +33,4 @@ import { ResetPasswordComponent } from './components/accounts/login/reset-passwo
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

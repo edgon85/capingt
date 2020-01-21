@@ -11,6 +11,11 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { GaleriaComponent } from './galeria/galeria.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AvatarPipe } from '../../pipes/avatar.pipe';
+import { GaleriaDetailComponent } from './galeria/galeria-detail.component';
+import { LightboxModule } from 'ngx-lightbox';
 
 @NgModule({
   declarations: [
@@ -20,21 +25,26 @@ import { BrowserModule } from '@angular/platform-browser';
     OurServicesComponent,
     AboutComponent,
     ContactComponent,
+    GaleriaComponent,
+    GaleriaDetailComponent,
+    AvatarPipe
   ],
   imports: [
     CommonModule,
+    HttpClientModule,
     BrowserModule,
     SharedModule,
     SharedAdminModule,
     PAGES_ROUTES,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    LightboxModule
   ],
   exports: [
     PagesComponent,
     OurServicesComponent,
     AboutComponent,
-    ContactComponent,
+    ContactComponent
   ]
 })
-export class PagesModule { }
+export class PagesModule {}
