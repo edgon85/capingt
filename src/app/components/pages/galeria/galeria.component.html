@@ -7,7 +7,7 @@
         <div class="contenedor-trabajos">
             <div class="trabajo" *ngFor="let galeria of galerias">
                 <div class="thumb" (click)="getgaleria(galeria.slug)">
-                    <img [src]="galeria.images.portada | avatar" alt="casa e imagen">
+                    <img [src]="galeria.images.portada | avatar" alt="capin">
                 </div>
                 <div class="descripcion">
                     <p class="nombre" (click)="getgaleria(galeria.slug)">{{ galeria.title }}</p>
