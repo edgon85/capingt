@@ -1,0 +1,10 @@
+.pointer {
+  /* cursor: pointer; */
+  cursor: zoom-in;
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    width: 80%;
+  }
+}

@@ -1,0 +1,18 @@
+<div class="services">
+    <app-widget-baner-pages [title]="titleBaner"></app-widget-baner-pages>
+</div>
+
+
+<div class="row">
+    <div class="container mt-5">
+        <div class="card-columns animated fadeInLeft">
+            <ng-container *ngFor="let image of _albums; let i=index">
+                <div class="card pointer animated fadeIn">
+                    <div (click)="open(i)" class="image">
+                        <img class="img-fluid" [src]="image.thumb" alt="wedev">
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>

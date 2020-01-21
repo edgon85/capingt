@@ -1,0 +1,19 @@
+<div class="services">
+    <app-widget-baner-pages [title]="titleBaner"></app-widget-baner-pages>
+</div>
+
+<section class="trabajos">
+    <div class="contenedor">
+        <div class="contenedor-trabajos">
+            <div class="trabajo" *ngFor="let galeria of galerias">
+                <div class="thumb" (click)="getgaleria(galeria.slug)">
+                    <img [src]="galeria.images.portada | avatar" alt="casa e imagen">
+                </div>
+                <div class="descripcion">
+                    <p class="nombre" (click)="getgaleria(galeria.slug)">{{ galeria.title }}</p>
+                    <!-- <p class="categoria">{{ galeria.title }}</p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
