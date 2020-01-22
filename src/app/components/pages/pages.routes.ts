@@ -47,11 +47,11 @@ const pagesRoutes: Routes = [
         component: ContactComponent,
         data: { titulo: 'Contacto', metaTag: _contactoTag }
       },
-      {
-        path: 'galeria',
-        component: GaleriaComponent,
-        data: { titulo: 'Galería', metaTag: 'capin' }
-      },
+      // {
+      //   path: 'galeria',
+      //   component: GaleriaComponent,
+      //   data: { titulo: 'Galería', metaTag: 'capin' }
+      // },
       {
         path: 'galeria/:slug',
         component: GaleriaDetailComponent,
