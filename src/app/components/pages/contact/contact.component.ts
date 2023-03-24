@@ -16,7 +16,7 @@ export class ContactComponent implements OnInit {
   email1 = 'gerencia@capingt.com';
   email2 = 'operaciones@capingt.com';
   email3 = 'comercializacion@capingt.com';
-  phone1 = '66724883';
+  phone1 = '42768937';
   phone2 = '';
   facebookUrl = 'https://www.facebook.com/CAP-IN-Capacitaci%C3%B3n-y-Asesor%C3%ADa-Profesional-e-Innovadora-2378216642421046/';
   twitterUrl = '#';
